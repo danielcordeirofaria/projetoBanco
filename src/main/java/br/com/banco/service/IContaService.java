@@ -6,7 +6,7 @@ import br.com.banco.model.Conta;
 
 public interface IContaService {
 
-	public Conta adicionarContaz(Conta c);
+	public Conta adicionarContas(Conta c);
 
 	public Conta recuperarPeloNumero(int numero);
 
