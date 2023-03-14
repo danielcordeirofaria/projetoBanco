@@ -15,10 +15,10 @@ import br.com.banco.service.IContaService;
 
 @RestController
 public class ContaController {
-	
+
 	@Autowired
 	private IContaService service;
-	
+
 	@GetMapping("/contas/{id}")
 	public ResponseEntity<?> recuperarPeloNumero(@PathVariable int id) {
 		Conta c = service.recuperarPeloNumero(id);
@@ -27,7 +27,7 @@ public class ContaController {
 		}
 		return ResponseEntity.status(404).body(new MensagemErro(404, "Número não localizado!"));
 	}
-	
+
 	@GetMapping("/contas/cliente/{id}")
 	public ArrayList<Conta> recuperarContasPeloCliente(@PathVariable int id) {
 		return service.recuperarContasPeloCliente(id);
