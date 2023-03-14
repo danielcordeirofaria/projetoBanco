@@ -25,7 +25,7 @@ public class MovimentacaoServiceImpl implements IMovimentacaoService {
 			return null;
 		}
 
-		Conta c = service.recuperarPeloNumero(m.getNumConta().getNumeroConta());
+		Conta c = service.recuperarPeloNumero(m.getConta().getNumeroConta());
 
 		c.setSaldo(c.getSaldo() + m.getValor() * m.getTipoOper());
 
@@ -37,7 +37,10 @@ public class MovimentacaoServiceImpl implements IMovimentacaoService {
 	@Override
 	public ArrayList<Movimentacao> recuperarTodas(int conta) {
 		// TODO Auto-generated method stub
-		return (ArrayList<Movimentacao>) repo.findAll(conta);
+		Conta c = new Conta();
+		c.setNumeroConta(conta);
+		
+		return (ArrayList<Movimentacao>) repo.findByConta(c);
 	}
 
 }

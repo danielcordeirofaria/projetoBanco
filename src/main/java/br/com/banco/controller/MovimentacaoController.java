@@ -30,6 +30,6 @@ public class MovimentacaoController {
 	
 	@GetMapping("/movimentacao/{id}")
 	public ArrayList<Movimentacao> recuperarTodas(@RequestBody Movimentacao m){
-		
+		return null;
 	}
 }

@@ -28,7 +28,7 @@ public class Movimentacao {
 	private String descricao;
 	@ManyToOne
 	@JoinColumn(name = "numero_conta")
-	private Conta numConta;
+	private Conta conta;
 
 	public int getNumSeq() {
 		return numSeq;
@@ -70,12 +70,14 @@ public class Movimentacao {
 		this.descricao = descricao;
 	}
 
-	public Conta getNumConta() {
-		return numConta;
+	
+
+	public Conta getConta() {
+		return conta;
 	}
 
-	public void setNumConta(Conta numConta) {
-		this.numConta = numConta;
+	public void setConta(Conta conta) {
+		this.conta = conta;
 	}
 
 	public Movimentacao() {
@@ -83,14 +85,6 @@ public class Movimentacao {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Movimentacao(int numSeq, LocalDate dataMovim, double valor, int tipoOper, String descricao, Conta numConta) {
-		super();
-		this.numSeq = numSeq;
-		this.dataMovim = dataMovim;
-		this.valor = valor;
-		TipoOper = tipoOper;
-		this.descricao = descricao;
-		this.numConta = numConta;
-	}
+
 
 } // Movimentacao

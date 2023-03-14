@@ -30,8 +30,6 @@ public class ContaController {
 	
 	@GetMapping("/contas/cliente/{id}")
 	public ArrayList<Conta> recuperarContasPeloCliente(@PathVariable int id) {
-		Cliente c = new Cliente();
-		c.setIdCliente(id);
-		return service.recuperarContasPeloCliente(c);
+		return service.recuperarContasPeloCliente(id);
 	}
 }

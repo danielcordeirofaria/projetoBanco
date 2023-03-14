@@ -9,6 +9,6 @@ import br.com.banco.model.Conta;
 
 public interface IContaRepo extends CrudRepository<Conta, Integer> {
 
-	ArrayList<Conta> findByCliente(Cliente c);
+	ArrayList<Conta> findByTitular(Cliente c);
 
 }

@@ -44,7 +44,7 @@ public class ContaServiceImpl implements IContaService {
 		// TODO Auto-generated method stub
 		Cliente c = new Cliente();
 		c.setIdCliente(idCliente);
-		return repo.findByCliente(c);
+		return repo.findByTitular(c);
 	}
 
 }
