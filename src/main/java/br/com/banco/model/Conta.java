@@ -29,20 +29,19 @@ public class Conta {
 
 	@ManyToOne
 	@JoinColumn(name = "id_cliente")
-	private Cliente idCliente;
+	private Cliente titular;
 
 	public Conta() {
 		super();
 	}
 
-	public Conta(int numeroConta, int agencia, int tipoConta, double saldo, int idCliente) {
+	public Conta(int numeroConta, int agencia, int tipoConta, double saldo, Cliente titular) {
 		super();
 		this.numeroConta = numeroConta;
 		this.agencia = agencia;
 		this.tipoConta = tipoConta;
 		this.saldo = saldo;
-		this.idCliente = new Cliente();
-		this.idCliente.setIdCliente(idCliente);
+		this.titular = titular;
 	}
 
 	public int getNumeroConta() {
@@ -77,12 +76,12 @@ public class Conta {
 		this.saldo = saldo;
 	}
 
-	public Cliente getIdCliente() {
-		return idCliente;
+	public Cliente getTitular() {
+		return titular;
 	}
 
-	public void setIdCliente(Cliente idCliente) {
-		this.idCliente = idCliente;
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
 	}
 
 }
