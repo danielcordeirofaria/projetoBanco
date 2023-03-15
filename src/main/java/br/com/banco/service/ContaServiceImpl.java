@@ -18,7 +18,7 @@ public class ContaServiceImpl implements IContaService {
 	@Override
 	public Conta adicionarContas(Conta c) {
 		// TODO Auto-generated method stub
-		if (c.getTipoConta() > 3 || 1 > c.getTipoConta()) {
+		if (c.getTipoConta() > 3 || c.getTipoConta() < 1) {
 			return null;
 		}
 		return repo.save(c);
