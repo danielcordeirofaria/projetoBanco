@@ -26,12 +26,15 @@ public class MovimentacaoServiceImpl implements IMovimentacaoService {
 		}
 
 		Conta c = service.recuperarPeloNumero(m.getConta().getNumeroConta());
+		if (c.getSaldo() > m.getValor()) {
 
-		c.setSaldo(c.getSaldo() + m.getValor() * m.getTipoOper());
+			c.setSaldo(c.getSaldo() + m.getValor() * m.getTipoOper());
 
-		service.alterarDados(c);
+			service.alterarDados(c);
 
-		return repo.save(m);
+			return repo.save(m);
+		}
+		return null;
 	}
 
 	@Override
@@ -39,7 +42,7 @@ public class MovimentacaoServiceImpl implements IMovimentacaoService {
 		// TODO Auto-generated method stub
 		Conta c = new Conta();
 		c.setNumeroConta(conta);
-		
+
 		return (ArrayList<Movimentacao>) repo.findByConta(c);
 	}
 
