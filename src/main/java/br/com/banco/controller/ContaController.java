@@ -39,11 +39,11 @@ public class ContaController {
 		}
 		return ResponseEntity.status(404).body(new MensagemErro(404, "Número não localizado!"));
 	}
-	
+
 	@PostMapping("/contas")
-	public ResponseEntity<?> adicionarConta(@RequestBody Conta c){
+	public ResponseEntity<?> adicionarConta(@RequestBody Conta c) {
 		Conta res = service.adicionarContas(c);
-		if(res != null) {
+		if (res != null) {
 			return ResponseEntity.status(201).body(res);
 		}
 		return ResponseEntity.status(400).body(new MensagemErro(400, "Conta não cadastrada"));

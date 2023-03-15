@@ -34,11 +34,11 @@ public class MovimentacaoController {
 	}
 
 	@GetMapping("/movimentacao/{id}")
-	public ResponseEntity<ArrayList<Movimentacao>> recuperarTodas(@PathVariable int id) {
+	public ResponseEntity<?> recuperarTodas(@PathVariable int id) {
 		ArrayList<Movimentacao> res = service.recuperarTodas(id);
-		if (res != null) {
-			return ResponseEntity.ok(res);
+		if (res.isEmpty() || res == null) {
+			return ResponseEntity.status(400).body(new MensagemErro(400, "Nenhuma movimentação encontrada"));
 		}
-		return ResponseEntity.notFound().build();
+		return ResponseEntity.ok(res);
 	}
 }
