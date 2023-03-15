@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.banco.dto.MensagemErro;
@@ -30,16 +28,12 @@ public class ContaController {
 	}
 
 	@GetMapping("/contas/cliente/{id}")
-	public ArrayList<Conta> recuperarContasPeloCliente(@PathVariable int id) {
-		return service.recuperarContasPeloCliente(id);
-	}
-	
-	@PostMapping("/contas")
-	public ResponseEntity<?> adicionarConta(@RequestBody Conta c){
-		Conta res = service.adicionarContas(c);
-		if(res != null) {
-			return ResponseEntity.status(201).body(res);
+	public ResponseEntity<?> recuperarContasPeloCliente(@PathVariable int id) {
+		ArrayList<Conta> c = service.recuperarContasPeloCliente(id);
+		if (c != null) {
+
+			return ResponseEntity.ok(c);
 		}
-		return ResponseEntity.status(400).body(new MensagemErro(400, "Conta não cadastrada"));
+		return ResponseEntity.status(404).body(new MensagemErro(404, "Número não localizado!"));
 	}
 }
