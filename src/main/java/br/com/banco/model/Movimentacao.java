@@ -23,7 +23,7 @@ public class Movimentacao {
 	@Column(name = "valor", nullable = false)
 	private double valor;
 	@Column(name = "tipo_operacao", nullable = false)
-	private int TipoOper;
+	private int tipoOper;
 	@Column(name = "descricao", length = 255)
 	private String descricao;
 	@ManyToOne
@@ -55,11 +55,11 @@ public class Movimentacao {
 	}
 
 	public int getTipoOper() {
-		return TipoOper;
+		return tipoOper;
 	}
 
 	public void setTipoOper(int tipoOper) {
-		TipoOper = tipoOper;
+		this.tipoOper = tipoOper;
 	}
 
 	public String getDescricao() {
