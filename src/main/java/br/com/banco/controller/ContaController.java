@@ -48,4 +48,24 @@ public class ContaController {
 		}
 		return ResponseEntity.status(400).body(new MensagemErro(400, "Conta não cadastrada"));
 	}
+	
+//	@PostMapping("/contas")
+//	public ResponseEntity<?> adicionarConta(@RequestBody Conta c) {
+//	    // Verificar se o cliente já existe
+//	    Cliente cliente = serviceCliente.recuperarPeloCpf(c.getTitular().getCpf());
+//	    if (cliente == null) {
+//	        return ResponseEntity.status(400).body(new MensagemErro(400, "Cliente não cadastrado"));
+//	    }
+//	    // Verificar se a conta já existe
+//	    Conta contaExistente = service.recuperarPeloNumero(c.getNumeroConta());
+//	    if (contaExistente != null) {
+//	        return ResponseEntity.status(400).body(new MensagemErro(400, "Conta já cadastrada"));
+//	    }
+//	    // Adicionar a nova conta
+//	    Conta res = service.adicionarContas(c);
+//	    if (res != null) {
+//	        return ResponseEntity.status(201).body(res);
+//	    }
+//	    return ResponseEntity.status(400).body(new MensagemErro(400, "Conta não cadastrada"));
+//	}
 }

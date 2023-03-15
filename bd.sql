@@ -27,3 +27,26 @@ CREATE TABLE tbl_movimentacao(
     numero_conta INTEGER not null,
     constraint fk_tbl_conta foreign key(numero_conta) references tbl_conta(numero_conta)
 );
+
+
+-- Exemplo de inserção de dados
+
+{
+    "numeroConta": null,
+    "agencia": 1649,
+    "tipoConta": 1,
+    "saldo": 0.00,
+    "titular": {
+        "idCliente": 1
+    }
+}
+
+MYSQLDATABASE: railway
+
+MYSQLHOST: containers-us-west-175.railway.app
+
+MYSQLPASSWORD: 3eRtIY0uSnrHK4wdmuke
+
+MYSQLPORT: 7274
+
+MYSQLUSER: root
