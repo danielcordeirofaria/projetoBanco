@@ -26,8 +26,16 @@ public class MovimentacaoServiceImpl implements IMovimentacaoService {
 		}
 
 		Conta c = service.recuperarPeloNumero(m.getConta().getNumeroConta());
-		if (c.getSaldo() >= m.getValor()) {
+		if (m.getTipoOper() == -1 && c.getSaldo() >= m.getValor() && m.getValor() > 0) {
 
+			c.setSaldo(c.getSaldo() + m.getValor() * m.getTipoOper());
+
+			service.alterarDados(c);
+
+			return repo.save(m);
+		}
+		else if (m.getTipoOper() == 1 && m.getValor() > 0 ) {
+			
 			c.setSaldo(c.getSaldo() + m.getValor() * m.getTipoOper());
 
 			service.alterarDados(c);

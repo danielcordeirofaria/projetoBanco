@@ -40,7 +40,7 @@ public class ClienteController {
 		if (res != null) {
 			return ResponseEntity.status(201).body(res);
 		}
-		return ResponseEntity.status(404).body(new MensagemErro(404, "Falha ao cadastrar cliente!"));
+		return ResponseEntity.status(400).body(new MensagemErro(400, "Falha ao cadastrar cliente!"));
 	}
 
 }
