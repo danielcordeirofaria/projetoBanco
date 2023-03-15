@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 public class Movimentacao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "num_sq")
+	@Column(name = "num_seq")
 	private int numSeq;
 	@Column(name = "data_operacao", nullable = false)
 	private LocalDate dataMovim;
