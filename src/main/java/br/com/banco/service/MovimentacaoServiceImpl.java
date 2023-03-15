@@ -26,7 +26,7 @@ public class MovimentacaoServiceImpl implements IMovimentacaoService {
 		}
 
 		Conta c = service.recuperarPeloNumero(m.getConta().getNumeroConta());
-		if (c.getSaldo() > m.getValor()) {
+		if (c.getSaldo() >= m.getValor()) {
 
 			c.setSaldo(c.getSaldo() + m.getValor() * m.getTipoOper());
 
