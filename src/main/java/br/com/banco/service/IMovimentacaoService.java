@@ -9,5 +9,8 @@ public interface IMovimentacaoService {
 	public Movimentacao cadastrarMovimentacao(Movimentacao m);
 	
 	public ArrayList<Movimentacao> recuperarTodas(int conta);
+
+	public boolean transferirValores(int contaOrigem, int contaDestino, double valor);
+	
 	
 }

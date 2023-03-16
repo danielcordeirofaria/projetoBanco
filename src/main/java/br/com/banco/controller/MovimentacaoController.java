@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.banco.dto.MensagemErro;
@@ -41,4 +42,19 @@ public class MovimentacaoController {
 		}
 		return ResponseEntity.ok(res);
 	}
+	
+	@PostMapping("/transferir")
+    public ResponseEntity<String> transferirValores(
+        @RequestParam("contaOrigem") int contaOrigem,
+        @RequestParam("contaDestino") int contaDestino,
+        @RequestParam("valor") double valor
+    ) {
+        boolean sucesso = service.transferirValores(contaOrigem, contaDestino, valor);
+
+        if (sucesso) {
+            return ResponseEntity.ok("Transferência realizada com sucesso");
+        } else {
+            return ResponseEntity.badRequest().body("Não foi possível realizar a transferência");
+        }
+    }
 }
