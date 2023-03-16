@@ -17,6 +17,9 @@ public class ClienteServiceImpl implements IClienteService {
 	@Override
 	public Cliente cadastrarCliente(Cliente c) {
 		// TODO Auto-generated method stub
+		if(repo.findByCpfCliente() != null || repo.findByTelefone() != null) {
+			return null;
+		}
 		return repo.save(c);
 	}
 
