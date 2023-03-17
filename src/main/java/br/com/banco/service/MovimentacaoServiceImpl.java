@@ -1,5 +1,6 @@
 package br.com.banco.service;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -53,38 +54,51 @@ public class MovimentacaoServiceImpl implements IMovimentacaoService {
 
 		return (ArrayList<Movimentacao>) repo.findByConta(c);
 	}
-	
+
 	@Override
-    public boolean transferirValores(int contaOrigem, int contaDestino, double valor) {
+	public boolean transferirValores(int contaOrigem, int contaDestino, double valor) {
 		// TODO Auto-generated method stub
 		Conta origem = service.recuperarPeloNumero(contaOrigem);
-        Conta destino = service.recuperarPeloNumero(contaDestino);
+		Conta destino = service.recuperarPeloNumero(contaDestino);
 
-        if (origem.getSaldo() >= valor && valor > 0) {
-            origem.setSaldo(origem.getSaldo() - valor);
-            destino.setSaldo(destino.getSaldo() + valor);
+		if (origem.getSaldo() >= valor && valor > 0) {
+			origem.setSaldo(origem.getSaldo() - valor);
+			destino.setSaldo(destino.getSaldo() + valor);
 
-            service.alterarDados(origem);
-            service.alterarDados(destino);
+			service.alterarDados(origem);
+			service.alterarDados(destino);
 
-            Movimentacao m = new Movimentacao();
-            m.setTipoOper(-1);
-            m.setConta(origem);
-            m.setValor(valor);
-            m.setDataMovim(LocalDate.now());
-            repo.save(m);
+			Movimentacao m = new Movimentacao();
+			m.setTipoOper(-1);
+			m.setConta(origem);
+			m.setValor(valor);
+			m.setDataMovim(LocalDate.now());
+			repo.save(m);
 
-            Movimentacao m2 = new Movimentacao();
-            m2.setTipoOper(1);
-            m2.setConta(destino);
-            m2.setValor(valor);
-            m2.setDataMovim(LocalDate.now());
-            repo.save(m2);
+			Movimentacao m2 = new Movimentacao();
+			m2.setTipoOper(1);
+			m2.setConta(destino);
+			m2.setValor(valor);
+			m2.setDataMovim(LocalDate.now());
+			repo.save(m2);
 
-            return true;
-        }
+			return true;
+		}
 
-        return false;
-    }
+		return false;
+	}
+
+	@Override
+	public ArrayList<Movimentacao> listarMovimentos(int conta, String strIni, String strFim) {
+		// TODO Auto-generated method stub
+		Conta c = new Conta();
+		c.setNumeroConta(conta);
+
+		LocalDate dIni = LocalDate.parse(strIni);
+
+		LocalDate dFim = LocalDate.parse(strFim);
+
+		return (ArrayList<Movimentacao>) repo.findByContaAndDataMovimBetween(c, dIni, dFim);
+	}
 
 }

@@ -42,19 +42,32 @@ public class MovimentacaoController {
 		}
 		return ResponseEntity.ok(res);
 	}
-	
-	@PostMapping("/transferir")
-    public ResponseEntity<String> transferirValores(
-        @RequestParam("contaOrigem") int contaOrigem,
-        @RequestParam("contaDestino") int contaDestino,
-        @RequestParam("valor") double valor
-    ) {
-        boolean sucesso = service.transferirValores(contaOrigem, contaDestino, valor);
 
-        if (sucesso) {
-            return ResponseEntity.ok("Transferência realizada com sucesso");
-        } else {
-            return ResponseEntity.badRequest().body("Não foi possível realizar a transferência");
-        }
-    }
+	@PostMapping("/transferir")
+	public ResponseEntity<String> transferirValores(
+			@RequestParam("contaOrigem") int contaOrigem,
+			@RequestParam("contaDestino") int contaDestino, 
+			@RequestParam("valor") double valor) {
+		boolean sucesso = service.transferirValores(contaOrigem, contaDestino, valor);
+
+		if (sucesso) {
+			return ResponseEntity.ok("Transferência realizada com sucesso");
+		} else {
+			return ResponseEntity.badRequest().body("Não foi possível realizar a transferência");
+		}
+	}
+
+	@GetMapping("/extrato")
+	public ResponseEntity<?> listarMovimentos(
+			@RequestParam("dataIni") String strIni,
+			@RequestParam("dataFim") String strFim, 
+			@RequestParam("conta") int c) {
+		ArrayList<Movimentacao> res = service.listarMovimentos(c, strIni, strFim);
+
+		if (res != null) {
+			return ResponseEntity.status(201).body(res);
+		}
+		return ResponseEntity.status(400).body(new MensagemErro(400, "Não foi encontrada nenhuma movimentação"));
+	}
+
 }
