@@ -1,0 +1,111 @@
+post cliente
+
+{
+    "nomeCliente": "Professor Isidro",
+    "cpfCliente": "123456789-89",
+    "telefoneCliente": "11987654321"
+}
+
+{
+    "nomeCliente": "Carina YellowBelt",
+    "cpfCliente": "321654987-78",
+    "telefoneCliente": "11987654321"
+}
+
+Listar todos os /clientes
+Listar todos os /clientes/id
+
+
+post conta
+
+{
+    "agencia":1234,
+    "tipoConta": 1,
+    "saldo": 10000,
+    "titular": {
+        "idCliente": 1
+    }
+}
+
+{
+    "agencia":1234,
+    "tipoConta": 2,
+    "saldo": 1568.32,
+    "titular": {
+        "idCliente": 1
+    }
+}
+
+{
+    "agencia":1234,
+    "tipoConta": 3,
+    "saldo": 56987.25,
+    "titular": {
+        "idCliente": 1
+    }
+}
+
+
+{
+    "agencia":1234,
+    "tipoConta": 1,
+    "saldo": 24561,
+    "titular": {
+        "idCliente": 2
+    }
+}
+
+{
+    "agencia":1234,
+    "tipoConta": 2,
+    "saldo": 5785,
+    "titular": {
+        "idCliente": 2
+    }
+}
+
+{
+    "agencia":1234,
+    "tipoConta": 3,
+    "saldo": 5253.25,
+    "titular": {
+        "idCliente": 2
+    }
+}
+
+get conta pelo id  /contas/id
+
+get todas as contas de um determinado cliente  /contas/cliente/id
+
+post movimentacao /movimentacao
+
+{
+    "valor": 1500.00,
+    "tipoOper": 1,
+    "descricao": "depósito pessoal",
+    "conta": {
+        "numeroConta": 1
+    }
+}
+
+{
+    "valor": 250.00,
+    "tipoOper": -1,
+    "descricao": "saque",
+    "conta": {
+        "numeroConta": 1
+    }
+}
+
+
+get conta pelo id  /contas/id
+
+get ver movimentacao pelo id  movimentacao/contas/id
+
+post /transfencia
+
+/transfencia?contaOrigem=1&contaDestino=2&valor=200
+
+get /extrato
+
+/extrato?conta=1&dataIni=2023-03-20&dataFim=2023-03-22
