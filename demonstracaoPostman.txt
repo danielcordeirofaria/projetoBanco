@@ -12,10 +12,17 @@ post /clientes
     "telefoneCliente": "11987644321"
 }
 
-Listar todos os /clientes
-Listar todos os /clientes/id
 
+---------------------------------------------------------
+Listar todos os cliente /clientes
 
+---------------------------------------------------------
+Listar cliente por id /clientes/id
+
+/clientes/1
+/clientes/2
+
+---------------------------------------------------------
 post /contas
 
 {
@@ -73,10 +80,20 @@ post /contas
     }
 }
 
+
+------------------------------------------------------------------
 get conta pelo id  /contas/id
 
+/contas/1
+/contas/4
+
+------------------------------------------------------------------
 get todas as contas de um determinado cliente  /contas/cliente/id
 
+/contas/cliente/1
+/contas/cliente/2
+
+------------------------------------------------------------------
 post movimentacao /movimentacao
 
 {
@@ -97,15 +114,28 @@ post movimentacao /movimentacao
     }
 }
 
-
+--------------------------------------------------------------
 get conta pelo id  /contas/id
 
-get ver movimentacao pelo id  movimentacao/contas/id
+/contas/1
+/contas/4
 
+
+--------------------------------------------------------------
+get ver movimentacao pelo id  movimentacao/contas/id (no caso seria /1)
+
+movimentacao/contas/1
+movimentacao/contas/4
+
+
+--------------------------------------------------------------
 post /transfencia
 
-/transfencia?contaOrigem=1&contaDestino=2&valor=200
+/transferencia?contaOrigem=1&contaDestino=4&valor=200
 
+--------------------------------------------------------------
 get /extrato
 
 /extrato?conta=1&dataIni=2023-03-20&dataFim=2023-03-22
+
+/extrato?conta=4&dataIni=2023-03-20&dataFim=2023-03-22
