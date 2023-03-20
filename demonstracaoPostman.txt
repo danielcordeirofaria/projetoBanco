@@ -1,4 +1,4 @@
-post cliente
+post /clientes
 
 {
     "nomeCliente": "Professor Isidro",
@@ -9,14 +9,14 @@ post cliente
 {
     "nomeCliente": "Carina YellowBelt",
     "cpfCliente": "321654987-78",
-    "telefoneCliente": "11987654321"
+    "telefoneCliente": "11987644321"
 }
 
 Listar todos os /clientes
 Listar todos os /clientes/id
 
 
-post conta
+post /contas
 
 {
     "agencia":1234,
@@ -47,7 +47,7 @@ post conta
 
 
 {
-    "agencia":1234,
+    "agencia":1235,
     "tipoConta": 1,
     "saldo": 24561,
     "titular": {
@@ -56,7 +56,7 @@ post conta
 }
 
 {
-    "agencia":1234,
+    "agencia":1235,
     "tipoConta": 2,
     "saldo": 5785,
     "titular": {
@@ -65,7 +65,7 @@ post conta
 }
 
 {
-    "agencia":1234,
+    "agencia":1235,
     "tipoConta": 3,
     "saldo": 5253.25,
     "titular": {

@@ -1,4 +1,4 @@
-post cliente
+post /clientes
 
 {
     "nomeCliente": "Professor Isidro",
@@ -9,14 +9,15 @@ post cliente
 {
     "nomeCliente": "Carina YellowBelt",
     "cpfCliente": "321654987-78",
-    "telefoneCliente": "11987654321"
+    "telefoneCliente": "11987644321"
 }
 
 Listar todos os /clientes
+
 Listar todos os /clientes/id
 
 
-post conta
+post /contas
 
 {
     "agencia":1234,
