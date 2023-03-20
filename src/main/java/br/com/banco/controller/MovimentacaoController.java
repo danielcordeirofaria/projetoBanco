@@ -43,7 +43,7 @@ public class MovimentacaoController {
 		return ResponseEntity.ok(res);
 	}
 
-	@PostMapping("/transferir")
+	@PostMapping("/transferencia")
 	public ResponseEntity<String> transferirValores(
 			@RequestParam("contaOrigem") int contaOrigem,
 			@RequestParam("contaDestino") int contaDestino, 
