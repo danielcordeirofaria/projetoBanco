@@ -1,6 +1,7 @@
 Walmir
 
-post /clientes
+post 
+https://projetobanco-production.up.railway.app/clientes
 
 {
     "nomeCliente": "Professor Isidro",
@@ -16,13 +17,14 @@ post /clientes
 
 
 ---------------------------------------------------------
-Listar todos os cliente /clientes
+Listar todos os cliente 
+https://projetobanco-production.up.railway.app/clientes
 
 ---------------------------------------------------------
 Listar cliente por id /clientes/id
 
-/clientes/1
-/clientes/2
+https://projetobanco-production.up.railway.app/clientes/1
+https://projetobanco-production.up.railway.app/clientes/2
 
 ---------------------------------------------------------
 Daniel
@@ -88,19 +90,19 @@ post /contas
 ------------------------------------------------------------------
 get conta pelo id  /contas/id
 
-/contas/1
-/contas/4
+https://projetobanco-production.up.railway.app/contas/1
+https://projetobanco-production.up.railway.app/contas/4
 
 ------------------------------------------------------------------
 get todas as contas de um determinado cliente  /contas/cliente/id
 
-/contas/cliente/1
-/contas/cliente/2
+https://projetobanco-production.up.railway.app/contas/cliente/1
+https://projetobanco-production.up.railway.app/contas/cliente/2
 
 ------------------------------------------------------------------
 André
 
-post movimentacao /movimentacao
+post movimentacao https://projetobanco-production.up.railway.app/movimentacao
 
 {
     "valor": 1500.00,
@@ -123,8 +125,8 @@ post movimentacao /movimentacao
 --------------------------------------------------------------
 get ver movimentacao pelo id  movimentacao/id (no caso seria /1)
 
-movimentacao/1
-movimentacao/4
+https://projetobanco-production.up.railway.app/movimentacao/1
+https://projetobanco-production.up.railway.app/movimentacao/4
 
 
 --------------------------------------------------------------
@@ -132,11 +134,11 @@ Carlinhos
 
 post /transfencia
 
-/transferencia?contaOrigem=1&contaDestino=4&valor=200
+https://projetobanco-production.up.railway.app/transferencia?contaOrigem=1&contaDestino=4&valor=200
 
 --------------------------------------------------------------
 get /extrato
 
-/extrato?conta=1&dataIni=2023-03-20&dataFim=2023-03-22
+https://projetobanco-production.up.railway.app/extrato?conta=1&dataIni=2023-03-20&dataFim=2023-03-22
 
-/extrato?conta=4&dataIni=2023-03-20&dataFim=2023-03-22
+https://projetobanco-production.up.railway.app/extrato?conta=4&dataIni=2023-03-20&dataFim=2023-03-22
