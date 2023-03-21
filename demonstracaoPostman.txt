@@ -1,3 +1,5 @@
+Walmir
+
 post /clientes
 
 {
@@ -23,6 +25,8 @@ Listar cliente por id /clientes/id
 /clientes/2
 
 ---------------------------------------------------------
+Daniel
+
 post /contas
 
 {
@@ -94,6 +98,8 @@ get todas as contas de um determinado cliente  /contas/cliente/id
 /contas/cliente/2
 
 ------------------------------------------------------------------
+André
+
 post movimentacao /movimentacao
 
 {
@@ -115,20 +121,15 @@ post movimentacao /movimentacao
 }
 
 --------------------------------------------------------------
-get conta pelo id  /contas/id
+get ver movimentacao pelo id  movimentacao/id (no caso seria /1)
 
-/contas/1
-/contas/4
-
-
---------------------------------------------------------------
-get ver movimentacao pelo id  movimentacao/contas/id (no caso seria /1)
-
-movimentacao/contas/1
-movimentacao/contas/4
+movimentacao/1
+movimentacao/4
 
 
 --------------------------------------------------------------
+Carlinhos
+
 post /transfencia
 
 /transferencia?contaOrigem=1&contaDestino=4&valor=200
