@@ -15,6 +15,12 @@ https://projetobanco-production.up.railway.app/clientes
     "telefoneCliente": "11987644321"
 }
 
+{
+    "nomeCliente": "Carlinhos durango da Silva",
+    "cpfCliente": "321456987-78",
+    "telefoneCliente": "11967844321"
+}
+
 
 ---------------------------------------------------------
 Listar todos os cliente 
@@ -83,6 +89,33 @@ post /contas
     "saldo": 5253.25,
     "titular": {
         "idCliente": 2
+    }
+}
+
+{
+    "agencia":1235,
+    "tipoConta": 1,
+    "saldo": 1000,
+    "titular": {
+        "idCliente": 3
+    }
+}
+
+{
+    "agencia":1235,
+    "tipoConta": 2,
+    "saldo": 1500,
+    "titular": {
+        "idCliente": 3
+    }
+}
+
+{
+    "agencia":1235,
+    "tipoConta": 3,
+    "saldo": 2000.25,
+    "titular": {
+        "idCliente": 3
     }
 }
 
