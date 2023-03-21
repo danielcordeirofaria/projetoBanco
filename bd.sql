@@ -43,10 +43,10 @@ CREATE TABLE tbl_movimentacao(
 
 MYSQLDATABASE: railway
 
-MYSQLHOST: containers-us-west-175.railway.app
+MYSQLHOST: containers-us-west-114.railway.app
 
-MYSQLPASSWORD: 3eRtIY0uSnrHK4wdmuke
+MYSQLPASSWORD: t22eBEGHosdmJOpiiZ91
 
-MYSQLPORT: 7274
+MYSQLPORT: 7541
 
 MYSQLUSER: root
