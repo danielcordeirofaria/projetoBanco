@@ -7,8 +7,8 @@
 		<version>3.0.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.isiflix</groupId>
-	<artifactId>restaurante</artifactId>
+	<groupId>br.com.banco</groupId>
+	<artifactId>banco</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>restaurante</name>
 	<description>Demo project for Spring Boot</description>
